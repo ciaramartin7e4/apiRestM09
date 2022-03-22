@@ -41,7 +41,7 @@ public class ControladorProducte {
         return new ResponseEntity<>(id, HttpStatus.NO_CONTENT);
     }
 
-    @GetMapping("/productes/{price}")
+    @GetMapping("/productes/price/{price}")
     public ResponseEntity<List<Producte>> getProducteByPrice(@PathVariable double price) {
         List<Producte> Producte = serveiProducte.getListByPrice(price);
         return ResponseEntity.ok(Producte);
