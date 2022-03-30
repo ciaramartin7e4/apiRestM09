@@ -23,6 +23,10 @@ public class Producte {
         this.price = price;
     }
 
+    public Producte() {
+        super();
+    }
+
     public int getId() {
         return id;
     }
