@@ -1,0 +1,9 @@
+2022-03-30 19:37:20 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM LISTA USUARI USUARI[*]"; SQL statement:
+SELECT * FROM LISTA USUARI USUARI [42000-200]
+2022-03-30 19:38:59 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'h' (TASK: ""STATUS"" BOOLEAN NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."TASK"("ID","DESCRIPTION","NAME","STATUS")VALUES(?,?,?,?) [22018-200]
+2022-03-30 19:38:59 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'h' (TASK: ""STATUS"" BOOLEAN NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."TASK"("ID","DESCRIPTION","NAME","STATUS")VALUES(?,?,?,?) [22018-200]
