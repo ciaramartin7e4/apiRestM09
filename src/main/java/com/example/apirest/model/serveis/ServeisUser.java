@@ -3,6 +3,7 @@ package com.example.apirest.model.serveis;
 import com.example.apirest.model.entitats.Usuari;
 import com.example.apirest.model.repositoris.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,7 +14,17 @@ public class ServeisUser {
 
     private final UserRepository userRepository;
 
-
+    private final PasswordEncoder xifrat;
+    public Usuari consultarPerUsername(String username) {
+        return userRepository.findByUsername(username).orElse(null);
+    }
+    public Usuari crearNouUsuari(Usuari nouUsuari) {
+        //falta controlar que els 2 passwords del client coincideixen
+        //passar un UsuariCreacioDTO
+        nouUsuari.setPassword(xifrat.encode(nouUsuari.getPassword()));
+        userRepository.save(nouUsuari);
+        return nouUsuari;
+    }
     //llistar tots els user
     public List<Usuari> get() {
         return userRepository.findAll();
@@ -48,5 +59,6 @@ public class ServeisUser {
             userRepository.deleteById(id);
         return user;
     }
+
 
 }
